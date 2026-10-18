@@ -1,0 +1,31 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/privacy", "destination": "/#privacy", "permanent": false },
+    { "source": "/privacy-policy", "destination": "/#privacy", "permanent": false },
+    { "source": "/terms", "destination": "/#terms", "permanent": false },
+    { "source": "/cookies", "destination": "/#cookies", "permanent": false },
+    { "source": "/journal/six-courses-above-austin", "destination": "/#dinner-story", "permanent": false },
+    { "source": "/journal/red-drive", "destination": "/#red-drive-story", "permanent": false },
+    { "source": "/journal/its-not-about-the-cars", "destination": "/#club-story", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" }
+      ]
+    },
+    {
+      "source": "/media/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }
+      ]
+    }
+  ]
+}

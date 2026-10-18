@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://theflowteam.com/sitemap.xml
